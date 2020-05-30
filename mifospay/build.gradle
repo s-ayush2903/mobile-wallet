@@ -15,6 +15,7 @@ android {
         versionCode 1
         versionName "1.0"
         vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
@@ -91,6 +92,8 @@ dependencies {
     implementation 'com.github.yalantis:ucrop:2.2.2'
     testImplementation "junit:junit:$rootProject.junitVersion"
     testImplementation 'com.squareup.okhttp3:mockwebserver:4.3.1'
+    implementation 'com.android.support:multidex:1.0.3'
+
     implementation project(':core')
 }
 
