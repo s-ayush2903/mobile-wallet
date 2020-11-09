@@ -10,7 +10,7 @@ group='com.github.ankurs287'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-
+    ndkVersion rootProject.ext.ndkVersion
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
