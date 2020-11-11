@@ -70,6 +70,7 @@ jobs:
 
       - name: Upload PMD Report
         uses: actions/upload-artifact@v2.2.0
+        if: failure()
         with:
           name: Upload PMD Report
           path: mifospay/build/reports/
