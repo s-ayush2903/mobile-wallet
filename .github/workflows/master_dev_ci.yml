@@ -63,3 +63,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: Gradlew Check
         run: ./gradlew pmd
+
+      - name: Upload PMD Report
+        uses: actions/upload-artifact@v2.2.0
+        with:
+          name: Upload PMD Report
+          path: mifospay/build/reports/
