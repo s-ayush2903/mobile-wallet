@@ -42,7 +42,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Static Analysis[Core]
-        run: ./gradlew checkstyle
+        run: ./gradlew core:lint
 
       - name: Upload Static Analysis Report For Core Module
         uses: actions/upload-artifact@v2.2.0
@@ -50,12 +50,12 @@ jobs:
           name: Static Analysis Report[Core]
           path: core/build/reports/
 
-#      - uses: actions/checkout@v2
-#      - name: Static Analysis[Mifospay]
-#        run: ./gradlew mifospay:lint
-#
-#      - name: Upload Static Analysis Report For MifosPay Module
-#        uses: actions/upload-artifact@v2.2.0
-#        with:
-#          name: Static Analysis Report[Mifospay]
-#          path: mifospay/build/reports/
+      - uses: actions/checkout@v2
+      - name: Static Analysis[Mifospay]
+        run: ./gradlew mifospay:lint
+
+      - name: Upload Static Analysis Report For MifosPay Module
+        uses: actions/upload-artifact@v2.2.0
+        with:
+          name: Static Analysis Report[Mifospay]
+          path: mifospay/build/reports/
