@@ -46,6 +46,7 @@ jobs:
 
       - name: Upload Static Analysis Report For Core Module
         uses: actions/upload-artifact@v2.2.0
+        if: failure()
         with:
           name: Static Analysis Report[Core]
           path: core/build/reports/
@@ -56,6 +57,7 @@ jobs:
 
       - name: Upload Static Analysis Report For MifosPay Module
         uses: actions/upload-artifact@v2.2.0
+        if: failure()
         with:
           name: Static Analysis Report[Mifospay]
           path: mifospay/build/reports/
