@@ -41,6 +41,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
       - name: Static Analysis
         run: ./gradlew check
+
+      - name: Upload Static Analysis Report
+        uses: actions/upload-artifact@v2.2.0
+        with:
+          name: Static Analysis Report
+          path: mifospay/build/outputs/
