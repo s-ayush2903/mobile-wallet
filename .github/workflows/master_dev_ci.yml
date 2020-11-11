@@ -42,7 +42,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Static Analysis
-        run: ./gradlew core:lint
+        run: ./gradlew core:lint && ./gradlew mifospay:lint
 
       - name: Upload Static Analysis Report
         uses: actions/upload-artifact@v2.2.0
