@@ -61,12 +61,12 @@ jobs:
           path: mifospay/build/reports/
 
   gradleCheck:
-    name: gradleCheck
+    name: PMD
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Gradlew Check
-        run: ./gradlew mifospay:pmd
+        run: ./gradlew pmd
 
       - name: Upload PMD Report
         uses: actions/upload-artifact@v2.2.0
