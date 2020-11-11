@@ -57,7 +57,7 @@ jobs:
 
       - name: Upload Static Analysis Report For MifosPay Module
         uses: actions/upload-artifact@v2.2.0
-        if: failure()
+        if: ${{ failure() || success() }}
         with:
           name: Static Analysis Report[Mifospay]
           path: mifospay/build/reports/
@@ -67,12 +67,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Gradlew Check
-        run: ./gradlew pmd
+      - name: PMD Check[Core]
+        run: ./gradlew core:pmd
 
-      - name: Upload PMD Report
+      - name: Upload PMD Report[Core]
         uses: actions/upload-artifact@v2.2.0
-        if: failure()
+        if: ${{ failure() || success() }}
         with:
-          name: Upload PMD Report
+          name: PMD Report[Core]
+          path: mifospay/build/reports/
+
+      - uses: actions/checkout@v2
+      - name: PMD Check[MifosPay]
+        run: ./gradlew mifospay:pmd
+
+      - name: Upload PMD Report[MifosPay]
+        uses: actions/upload-artifact@v2.2.0
+        if: ${{ failure() || success() }}
+        with:
+          name: PMD Report[MifosPay]
           path: mifospay/build/reports/
