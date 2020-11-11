@@ -6,6 +6,7 @@ import org.mifos.mobilewallet.core.data.fineract.entity.mapper.UserEntityMapper;
 import org.mifos.mobilewallet.core.data.fineract.repository.FineractRepository;
 import org.mifos.mobilewallet.core.domain.model.user.User;
 import org.mifos.mobilewallet.core.utils.Constants;
+import org.mifos.mobilewallet.core.data.fineract.api.ApiEndPoints;
 
 import javax.inject.Inject;
 
