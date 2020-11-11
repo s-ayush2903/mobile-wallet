@@ -75,7 +75,7 @@ jobs:
         if: ${{ failure() || success() }}
         with:
           name: PMD Report[Core]
-          path: mifospay/build/reports/
+          path: core/build/reports/
 
       - uses: actions/checkout@v2
       - name: PMD Check[MifosPay]
