@@ -48,4 +48,4 @@ jobs:
         uses: actions/upload-artifact@v2.2.0
         with:
           name: Static Analysis Report
-          path: mifospay/build/outputs/
+          path: core/build/reports/
