@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    name: Build
+    name: Build APK
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -35,3 +35,12 @@ jobs:
         with:
           name: mobile-wallet
           path: mifospay/build/outputs/apk/debug/
+
+  lintCheck:
+    name: StaticAnalysis
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Static Analysis
+        run: ./gradlew check
