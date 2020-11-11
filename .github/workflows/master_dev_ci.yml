@@ -62,4 +62,4 @@ jobs:
 
       - uses: actions/checkout@v2
       - name: Gradlew Check
-        run: ./gradlew check
+        run: ./gradlew pmd
