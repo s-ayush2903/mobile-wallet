@@ -2,7 +2,6 @@ package org.mifos.mobilewallet.core.data.fineract.api.services;
 
 import org.mifos.mobilewallet.core.data.fineract.api.ApiEndPoints;
 import org.mifos.mobilewallet.core.data.fineract.entity.UserEntity;
-import android.view.LayoutInflater;
 
 import retrofit2.http.POST;
 import retrofit2.http.Query;
@@ -16,6 +15,6 @@ public interface AuthenticationService {
 
     @POST(ApiEndPoints.AUTHENTICATION)
     Observable<UserEntity> authenticate(@Query("username") String username,
-            @Query("password") String password);
+                                        @Query("password") String password);
 
 }
