@@ -46,7 +46,7 @@ jobs:
 
       - name: Upload Static Analysis Report For Core Module
         uses: actions/upload-artifact@v2.2.0
-        if: ${{failure() || success()}}
+        if: ${{ failure() || success() }}
         with:
           name: Static Analysis Report[Core]
           path: core/build/reports/
