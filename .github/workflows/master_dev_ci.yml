@@ -25,6 +25,9 @@ jobs:
       - name: Change gradlew Permission
         run: chmod +x gradlew
 
+      - name: Install NDK
+        run: echo "y" | sudo /usr/local/lib/android/tools/bin/sdkmanager --install "ndk;21.3.6528147" --sdk_root=${ANDROID_SDK_ROOT}
+
         # Build App
       - name: Build with Gradle
         run: ./gradlew assemble
