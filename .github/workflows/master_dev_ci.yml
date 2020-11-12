@@ -27,7 +27,7 @@ jobs:
 
         # Build App
       - name: Build with Gradle
-        run: ./gradlew assembleDebug --stacktrace
+        run: ./gradlew assemble
 
         # Upload Built APK
       - name: Upload Build Artifacts
