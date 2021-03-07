@@ -57,8 +57,9 @@ jobs:
 
       - uses: actions/checkout@v2
       - name: Static Analysis[Mifospay]
-        run: ./gradlew mifospay:lint --stacktrace
-
+        run: | 
+         ./gradlew clean
+         ./gradlew mifospay:lint
       - name: Upload Static Analysis Report For MifosPay Module
         uses: actions/upload-artifact@v2.2.0
         if: ${{ failure() || success() }}
